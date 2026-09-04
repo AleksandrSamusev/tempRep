@@ -1,0 +1,48 @@
+/* 1. Global Reset & Box Sizing */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Document & Body Defaults */
+html {
+    /* Smooth scrolling for anchor links */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Ensures consistent rendering on Mac/Windows */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Prevents default browser spacing */
+    min-height: 100vh;
+    line-height: 1.5;
+    font-family: "Google Sans Flex", Helvetica, Arial, sans-serif;
+}
+
+/* 3. Form & Input Resets */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* 4. Media Resets */
+img, picture, video, canvas, svg {
+    display: block; max-width: 100%;
+}
+
+.container {
+    /* 1. Sets the upper limit for how wide the site can get */
+    max-width: 1200px;
+
+    /* Centers container horizontally on the screen */
+    margin: 0 auto;
+
+    /* Add safety spacing on small mobile screens so text doesn't touch the edge */
+    padding: 0 20px;
+
+    /* Ensures that layout math stays predictable */
+    width: 100%;
+}
+
