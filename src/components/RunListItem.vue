@@ -26,10 +26,10 @@ const formatDate = (dateString) => {
   <div class="runs-grid">
     <span>Run-{{run.id}}</span>
     <span>{{ run.title }}</span>
-    <span>{{formatDate(run.runStart)}}</span>
-    <span>{{formatDate(run.runEnd)}}</span>
+    <span class="span-dates">{{formatDate(run.runStart)}}</span>
+    <span class="span-dates">{{formatDate(run.runEnd)}}</span>
+    <span>{{run.runStatus}}</span>
     <span>more details</span>
-    <button class="white-with-border">Complete</button>
   </div>
 </template>
 <style>
@@ -39,6 +39,11 @@ const formatDate = (dateString) => {
   align-items: center;
   gap: 1.5rem;
   width: 100%;
+}
+
+.span-dates {
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .white-with-border {
