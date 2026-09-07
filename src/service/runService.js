@@ -6,5 +6,8 @@ export default {
     },
     getAllRuns() {
         return apiClient.get(`/runs`);
+    },
+    getRunById(id) {
+        return apiClient.get(`/runs/${id}`)
     }
 }

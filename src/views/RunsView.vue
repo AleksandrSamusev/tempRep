@@ -1,5 +1,5 @@
 <script setup>
-import RunListItem from '../components/RunListItem.vue';
+import RunCard from '../components/RunCard.vue';
 import runService from "@/service/runService.js";
 import {onMounted, ref} from "vue";
 
@@ -13,31 +13,30 @@ onMounted(async () => {
     console.error(error);
   }
 })
-
 </script>
-
 <template>
-<div class="flex-main-container">
-  <div class="flex-row">
-    <h1>Runs</h1>
-    <div class="flex-buttons-container">
-      <button class="button-new-run">New Run</button>
+  <div class="flex-main-container">
+    <div class="flex-row">
+      <h1>Runs</h1>
+      <div class="flex-buttons-container">
+        <button class="button-new-run">New Run</button>
+      </div>
     </div>
+    <RunCard v-for="run in runs" :key="run.id" :run="run"/>
   </div>
-  <RunListItem v-for="run in runs" :key="run.id" :run="run" />
-
-</div>
 </template>
-
 <style scoped>
 .flex-main-container {
   margin-top: 2rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  height: 550px;
+  height: auto;
+  width: 100%;
   gap: 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 100px;
 }
 
 .flex-row {
@@ -46,7 +45,7 @@ onMounted(async () => {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .flex-buttons-container {
